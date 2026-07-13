@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavigationBar from './NavBar'
 import axios from 'axios'
 
@@ -6,7 +6,7 @@ const ViewBar = () => {
     const[data,changeData] =useState([])
 
     const fetchData =() => {
-        axios.get(" https://host-demo-app.onrender.com/api/donors").then(
+        axios.get("https://host-demo-app.onrender.com/api/donors").then(
             (response) => {
                 changeData(response.data)
             }
